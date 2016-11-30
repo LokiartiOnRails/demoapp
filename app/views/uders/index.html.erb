@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Uders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uders.each do |uder| %>
+      <tr>
+        <td><%= uder.name %></td>
+        <td><%= uder.email %></td>
+        <td><%= link_to 'Show', uder %></td>
+        <td><%= link_to 'Edit', edit_uder_path(uder) %></td>
+        <td><%= link_to 'Destroy', uder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Uder', new_uder_path %>
